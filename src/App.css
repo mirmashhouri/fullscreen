@@ -1,0 +1,13 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body,html, #root{
+  height:100%;
+  width:100%;
+}
+*{
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  background: #000;
+}

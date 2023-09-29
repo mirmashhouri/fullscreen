@@ -26,8 +26,7 @@ export default class FullscreenStore {
   }
 
   private scrollToTop = ()=>{
-    const element = document.getElementsByClassName("empty-top-span")[0];
-    element?.scrollIntoView({ block: "end" });
+    window.scrollTo(0,0)
   }
 
   @action

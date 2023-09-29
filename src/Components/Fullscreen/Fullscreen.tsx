@@ -24,7 +24,6 @@ export const Fullscreen: IFullscreen = observer(() => {
 
   return (
     <>
-    <span className='empty-top-span position-fixed top-0 left-0' style={{zIndex:10000}}>test</span>
       <div  className="invisible-treadmill"  />   
       <div className='fullscreen-page text-center position-relative m-auto h-100 w-100'> 
         {

@@ -16,6 +16,7 @@
   left: 0;
   z-index: 100;
 }
+
 .fullscreen-content .no-swipe {
   visibility: hidden;
 }
@@ -23,12 +24,12 @@ button {
   display: none !important;
 }
 .swipe-up {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   right: 0;
   height: 200vh;
-  color: #fff;
+  color: #000;
   font-size: 2rem;
   display: none;
   text-align: center;

@@ -24,6 +24,7 @@ export const Fullscreen: IFullscreen = observer(() => {
 
   return (
     <>
+    {/* <span>{maxLandscapeHeight+','+maxPortraitHeight+','+window.innerHeight+','+window.innerWidth}</span> */}
       <div  className="invisible-treadmill"  />   
       <div className='fullscreen-page text-center position-relative m-auto h-100 w-100'> 
         {

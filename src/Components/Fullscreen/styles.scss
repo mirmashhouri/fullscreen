@@ -15,10 +15,9 @@
   top: 0;
   left: 0;
   z-index: 100;
-}
-
-.fullscreen-content .no-swipe {
-  visibility: hidden;
+  .no-swipe {
+    visibility: hidden;
+  }
 }
 button {
   display: none !important;
@@ -35,6 +34,8 @@ button {
   text-align: center;
   width: 100%;
   transform: translateX(-50%);
+  z-index: 101;
+  background-color: #fff;
 }
 .show {
   display: block;

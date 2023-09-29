@@ -21,9 +21,13 @@ export default class FullscreenStore {
 
   @action
   setInitialValue =()=>{
+   this.scrollToTop();
+   this.onCheckSwipeUp();
+  }
+
+  private scrollToTop = ()=>{
     const element = document.getElementsByClassName("empty-top-span")[0];
     element?.scrollIntoView({ block: "end" });
-     this.onCheckSwipeUp();
   }
 
   @action
@@ -49,10 +53,8 @@ export default class FullscreenStore {
       this.setShowSwipeUp(show);
     }
     else{
-      window.scrollTo(0, 0);
        this.setShowSwipeUp(true);
-      const element = document.getElementById("swipe-up");
-      element?.scrollIntoView({ block: "end" });
+       this.scrollToTop();
     }
   };
 }

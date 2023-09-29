@@ -4,28 +4,24 @@ import {
 } from 'mobx';
 
 export default class FullscreenStore {
-
   @observable maxPortraitHeight: number = 0;
   @observable maxLandscapeHeight: number = 0;
-
   @observable showSwipeUp: boolean=true;
-
 
   constructor() {
     makeObservable(this);
-    let portrait = window.matchMedia("(orientation: portrait)")
-    window.addEventListener('resize', this.onCheckSwipeUp);
-    //  window.addEventListener("scroll", this.onCheckSwipeUp);
+    this.attachListeners()
+  }
 
-    portrait.addEventListener("change",(e)=>{
-      this.setInitialValue();
-    } );
+  attachListeners =() =>{
+    window.addEventListener('resize', this.onCheckSwipeUp);
+    let portrait = window.matchMedia("(orientation: portrait)")
+    portrait.addEventListener("change",this.setInitialValue);
   }
 
   @action
   setInitialValue =()=>{
-    window.scrollTo(0, 0);
-    const element = document.getElementById("swipe-up");
+    const element = document.getElementsByClassName("empty-top-span")[0];
     element?.scrollIntoView({ block: "end" });
      this.onCheckSwipeUp();
   }
@@ -54,7 +50,6 @@ export default class FullscreenStore {
     }
     else{
       window.scrollTo(0, 0);
-
        this.setShowSwipeUp(true);
       const element = document.getElementById("swipe-up");
       element?.scrollIntoView({ block: "end" });

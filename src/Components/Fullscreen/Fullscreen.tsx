@@ -11,8 +11,7 @@ export const Fullscreen: IFullscreen = observer(() => {
 
   const {showSwipeUp}=fullscreenStore;
 
-   const src='https://de-cgm.svmsrv.com/slots/1/?cashierUrl=&allowDesktopFullscreen=true&allowMobileFullscreen=true&enableRefresh=true&behavior=0&bridgeUrl=&gameToken=aoc&language=en&operatorToken=654be709f71140f7aa65dcd8cede80d4&playerToken=sx7axjha3292s8xws&host=https://de-se.svmsrv.com';
-
+   const src='https://de-cgm.svmsrv.com/slots/1/?cashierUrl=&allowDesktopFullscreen=true&allowMobileFullscreen=true&enableRefresh=true&behavior=0&bridgeUrl=&gameToken=60uch&language=en&operatorToken=654be709f71140f7aa65dcd8cede80d4&playerToken=sx7axjha3292s8xws&host=https://de-se.svmsrv.com';
   const resizeIframe = () => {
     let iframe = ref.current;
     window.addEventListener('message', message => {

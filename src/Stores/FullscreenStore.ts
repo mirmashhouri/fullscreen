@@ -15,11 +15,12 @@ export default class FullscreenStore {
 
   attachListeners =() =>{
     window.addEventListener('resize', this.onCheckSwipeUp);
+
    document.addEventListener('touchend',()=>{
     if(this.showSwipeUp)
     this.onCheckSwipeUp();
    } 
-   ,false);
+   ,true);
   }
 
   private scrollToTop = ()=>{

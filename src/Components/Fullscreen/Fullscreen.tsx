@@ -29,14 +29,18 @@ export const Fullscreen: IFullscreen = observer(() => {
         {
             <section className='w-100 h-100'>  
               <div className="h-100 fullscreen-content">
-                <iframe
+                {/* <iframe
                   className={ `h-100 w-100 ${showSwipeUp ? 'no-swipe' : ''}` }
                   ref={ ref }
                   src={ src}
                   title={ '7mojos' }
                   onLoad={ resizeIframe }
                   allowFullScreen
-                />
+                /> */}
+                <div className={ `h-100 w-100 text-white bg-dark ${showSwipeUp ? 'no-swipe' : ''}` }
+                  ref={ ref }>
+                      fullscreen
+                </div>
               </div>
               <div
                 className={ showSwipeUp ? 'swipe-up show' : 'swipe-up' } 

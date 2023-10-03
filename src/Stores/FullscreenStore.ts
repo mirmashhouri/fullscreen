@@ -34,25 +34,20 @@ export default class FullscreenStore {
 
    @action
     onCheckSwipeUp = () => {
-     let isPortrait= window.matchMedia("(orientation: portrait)").matches;
+     const wInnerHeight=window.innerHeight;
+     const wInnerWidth=window.innerWidth;
+     const isPortrait=wInnerHeight>wInnerWidth;
+     const maxHeight=isPortrait?this.maxPortraitHeight:this.maxLandscapeHeight;
 
-     if(isPortrait !== this.isPortrait){
-      this.setShowSwipeUp(true);
-      this.scrollToTop();
-      this.isPortrait=isPortrait;
-      this.maxLandscapeHeight=0;
-      this.maxPortraitHeight=0;
-     }
-     else{
-      const wInner=window.innerHeight;
-      const maxHeight=isPortrait?this.maxPortraitHeight:this.maxLandscapeHeight;
-      if(wInner>=maxHeight)
+      if(wInnerHeight>=maxHeight-40)
       {
         if(isPortrait){
-          this.maxPortraitHeight=wInner;
+          this.maxPortraitHeight=Math.max(wInnerHeight,this.maxPortraitHeight);
+          this.maxLandscapeHeight=Math.max(wInnerWidth,this.maxLandscapeHeight);
         }
         else{
-          this.maxLandscapeHeight=wInner;
+          this.maxLandscapeHeight=Math.max(wInnerHeight,this.maxLandscapeHeight);
+          this.maxPortraitHeight=Math.max(wInnerWidth,this.maxPortraitHeight);
         }
         this.setShowSwipeUp(false);
       }
@@ -61,7 +56,6 @@ export default class FullscreenStore {
          this.setShowSwipeUp(true);
          this.scrollToTop();
       }
-     }
   };
 }
 

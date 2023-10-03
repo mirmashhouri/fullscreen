@@ -9,7 +9,7 @@ const fullscreenStore= new FullscreenStore();
 export const Fullscreen: IFullscreen = observer(() => {
   const ref = useRef<HTMLIFrameElement>(null);
 
-  const {showSwipeUp}=fullscreenStore;
+  const {showSwipeUp,maxPortraitHeight,maxLandscapeHeight}=fullscreenStore;
 
    const src='https://www.7mojos.com';
   const resizeIframe = () => {
@@ -23,7 +23,7 @@ export const Fullscreen: IFullscreen = observer(() => {
 
   return (
     <>
-    {/* <span>{maxLandscapeHeight+','+maxPortraitHeight+','+window.innerHeight+','+window.innerWidth}</span> */}
+    {/* <span style={{zIndex:1000,position:'fixed',color:'red'}}>{maxPortraitHeight+','+maxLandscapeHeight+','+window.innerHeight+','+window.innerWidth}</span> */}
       <div  className="invisible-treadmill"  />   
       <div className='fullscreen-page text-center position-relative m-auto h-100 w-100'> 
         {

@@ -24,7 +24,7 @@ export default class FullscreenStore {
   }
 
   private scrollToTop = ()=>{
-    window.scrollTo(0,0);
+    window.scrollTo(0,window.innerHeight/2);
   }
 
   @action
